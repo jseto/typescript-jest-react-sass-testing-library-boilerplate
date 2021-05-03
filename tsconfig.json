@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+    }
+  },
+  "compilerOptions": {
+    "target": "es5", 
+    "module": "ESNext", 
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "./out",
+		"resolveJsonModule": true,
+    "lib": [
+      "esnext", "dom"
+    ],
+    "experimentalDecorators": true,
+    "jsx": "react",
+	}
+}

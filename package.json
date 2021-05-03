@@ -1,0 +1,48 @@
+{
+  "name": "project-name",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode=production",
+    "debug": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage false",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jseto/typescript-jest-react-sass-testing-library-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Josep Seto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/typescript-jest-react-sass-testing-library-boilerplate/issues"
+  },
+  "homepage": "https://bitbucket.org/typescript-jest-react-sass-testing-library-boilerplate#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "css-loader": "^5.2.4",
+    "desvg-loader": "^0.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "mini-css-extract-plugin": "^1.5.0",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "^11.0.1",
+    "svg-loader": "^0.0.2",
+    "ts-jest": "^26.5.5",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
