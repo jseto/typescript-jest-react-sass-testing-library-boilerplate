@@ -17,9 +17,9 @@
   "author": "Josep Seto",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/typescript-jest-react-sass-testing-library-boilerplate/issues"
+    "url": "https://github.com/jseto/typescript-jest-react-sass-testing-library-boilerplate/issues"
   },
-  "homepage": "https://bitbucket.org/typescript-jest-react-sass-testing-library-boilerplate#readme",
+  "homepage": "https://github.com/jseto/typescript-jest-react-sass-testing-library-boilerplate#readme",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@testing-library/jest-dom": "^5.11.10",
