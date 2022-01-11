@@ -8,32 +8,30 @@ module.exports = ( env, arg ) => {
 			'project-nameproject-name': './src/index.tsx'
 		},
 		output: {
-			filename: '[name].main.js'
+			filename: '[name].main.js',
+			clean: true
 		},
 		devtool: 'source-map',
+		devServer: {
+			static: {
+				directory: 'mocks'
+			}
+		},
 		resolve: {
 			extensions: [ '.ts', '.tsx', '.js', '.jsx' ]
 		},
 		module: {
 			rules: [
 				{
-					test: /\.(png|jpe?g|gif)$/,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								outputPath: 'images',
-								esModule: false,
-							},
-						},
-					],
-				},
-				{
 					test: /\.tsx?$/,
 					loader: "ts-loader",
 				},
 				{
-					test: /\.svg$/,
+					test: /\.(png|jpe?g|gif)$/i,
+					type: 'asset/resource'
+				},
+				{
+					test: /(?<!\.css).svg$/,  // prefix with .css.svg for files in url() css statements
 					use: [
 						'desvg-loader/react', // Add loader (use 'desvg-loader/react' for React)
 						'svg-loader', // svg-loader must precede desvg-loader
@@ -42,33 +40,23 @@ module.exports = ( env, arg ) => {
 				{
 					test: /\.css$/,
 					use: [
-						MiniCssExtractPlugin.loader,
-						{
-							loader: "css-loader",
-							options: {
-								url: false
-							}
-						}
+						arg.mode==='production'? MiniCssExtractPlugin.loader : 'style-loader',
+						'css-loader'
 					]
 				},
 				{
 			    test: /\.scss$/,
 			    use: [
-			      MiniCssExtractPlugin.loader,
-						{
-							loader: "css-loader",
-							options: {
-								url: false
-							}
-						},
-			      "sass-loader"
+						arg.mode==='production'? MiniCssExtractPlugin.loader : 'style-loader',
+						{ loader: "css-loader", options: { sourceMap: true } },
+						{ loader: 'sass-loader', options: {	sourceMap: true	} }
 			    ],
 			  },
 			],
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'project-name.css'
+				filename: '[name].css'
 			}),
 			new HtmlWebpackPlugin({
 				template: 'src/index.html',
